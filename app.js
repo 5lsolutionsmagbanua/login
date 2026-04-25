@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 var dashboardRouter = require('./routes/dashboard');
+var ticketRouter = require('./routes/ticket');
 var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views/layout'));
@@ -23,6 +24,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter);
 app.use('/dashboard', dashboardRouter);
+app.use('/ticket', ticketRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
