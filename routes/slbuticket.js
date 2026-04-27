@@ -3,9 +3,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('dashboard', { title: 'Express' });
+    res.render('slbuticket', { title: 'Tickets List SOUTH LUZON' });
 });
-
 
 router.get('/get-data/:name/:position', (req, res) => {
     try {
