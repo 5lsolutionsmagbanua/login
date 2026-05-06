@@ -1,230 +1,101 @@
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-3">
-    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-    <a href="/ticket" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i class="fa fa-plus fa-lg"></i>
-        CREATE TICKET</a>
+  <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+  <ul class="nav nav-pills nav-fill" >
+  <li class="nav-item">
+    <a class="nav-link " style="letter-spacing: 5px;  border: 1px solid green;" href="/ticket">CREATE TICKET</a>
+  </li>
+  &nbsp;&nbsp;&nbsp;
+    <li class="nav-item">
+    <a class="nav-link " style="letter-spacing: 5px;  border: 1px solid green;" href="/dispatch">ASSIGN FE</a>
+  </li>
+</ul>
 </div>
 
 <!-- Content Row -->
 <div class="row">
-
-    <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <a href="/slbuticket" style="text-decoration: none;">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                My Overdue
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                1
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-ticket-alt fa-2x text-gray-300"></i>
-                    </div>
-                </div>
-            </div>
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-warning shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <a href="/slbuticket" style="text-decoration: none">
+              <div
+                class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+              >
+                SLBU & NLBU
+              </div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800" id ="slbu-nlbu-ticket"></div>
+            </a>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-ticket-alt fa-2x text-gray-300"></i>
+          </div>    
         </div>
+      </div>           
     </div>
-
-    <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <a href="/slbuticket" style="text-decoration: none;">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                MY DUE TODAY
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                1
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-ticket-alt fa-2x text-gray-300"></i>
-                    </div>
-                </div>
-            </div>
+  </div>
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-success shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <a href="/slbuticket" style="text-decoration: none">
+              <div
+                class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+              >
+                NCR & RIZAL
+              </div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800" id = "ncr-rizal-ticket">1</div>
+            </a>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-ticket-alt fa-2x text-gray-300"></i>
+          </div>
         </div>
+      </div>
     </div>
-
-    <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <a href="/slbuticket" style="text-decoration: none;">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Urgent
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                1
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-ticket-alt fa-2x text-gray-300"></i>
-                    </div>
-                </div>
-            </div>
+  </div>
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-info shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <a href="/slbuticket" style="text-decoration: none">
+              <div
+                class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+              >
+                VRBU
+              </div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800" id = "vrbu-ticket">1</div>
+            </a>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-ticket-alt fa-2x text-gray-300"></i>
+          </div>
         </div>
+      </div>
     </div>
-
-    <!-- Pending Requests Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <a href="/slbuticket" style="text-decoration: none;">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                High
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                1
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-ticket-alt fa-2x text-gray-300"></i>
-                    </div>
-                </div>
-            </div>
+  </div>
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-secondary shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <a href="/slbuticket" style="text-decoration: none">
+              <div
+                class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+              >
+                MRBU
+              </div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800" id = "mrbu-ticket">1</div>
+            </a>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-ticket-alt fa-2x text-gray-300"></i>
+          </div>
         </div>
+      </div>
     </div>
-    <!-- Pending Requests Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <a href="/slbuticket" style="text-decoration: none;">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Medium
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                1
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-ticket-alt fa-2x text-gray-300"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Pending Requests Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <a href="/slbuticket" style="text-decoration: none;">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Low
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">1
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-ticket-alt fa-2x text-gray-300"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-warning shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <a href="/slbuticket" style="text-decoration: none;">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                SLBU & NLBU
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                1
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-ticket-alt fa-2x text-gray-300"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-success shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <a href="/slbuticket" style="text-decoration: none;">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                NCR & RIZAL
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                1
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-ticket-alt fa-2x text-gray-300"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-info shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <a href="/slbuticket" style="text-decoration: none;">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                VRBU
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                1
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-ticket-alt fa-2x text-gray-300"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-secondary shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <a href="/slbuticket" style="text-decoration: none;">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                MRBU
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                1
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-ticket-alt fa-2x text-gray-300"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
 </div>

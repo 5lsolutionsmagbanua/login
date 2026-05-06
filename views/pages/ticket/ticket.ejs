@@ -1,120 +1,173 @@
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Create Ticket</h1>
+  <h1 class="h3 mb-0 text-gray-800">Create Ticket</h1>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="form-group">
+      <label for="contactClient">Contact</label>
+      <span class="star" aria-hidden="true">*</span>
+      <input
+        type="email"
+        class="form-control"
+        id="contactClient"
+        placeholder="name@example.com"
+      />
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <label for="subjectClient">Subject</label>
+      <span class="star" aria-hidden="true">*</span>
+      <input
+        type="email"
+        class="form-control"
+        id="subjectClient"
+        placeholder="Subject"
+      />
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <label for="subcategoryTicket">Status</label>
+      <select class="form-control" id="status">
+        <option>Choose</option>
+        <option>New</option>
+        <option>Open</option>
+        <option>Pending</option>
+        <option>Awaiting response from client</option>
+        <option>Resolved</option>
+        <option>CLose</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="form-group">
+      <label for="urgencyTicket">Urgency</label>
+      <select class="form-control" id="urgencyTicket">
+        <option>Choose</option>
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <label for="impactTicket">Impact</label>
+      <select class="form-control" id="impactTicket">
+        <option>Choose</option>
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <label for="priorityTicket">Priority</label>
+      <select class="form-control" id="priorityTicket">
+        <option>Choose</option>
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="categoryTicket">Category</label>
+      <select class="form-control" id="categoryTicket">
+        <option>Choose</option>
+        <option>Hardware</option>
+        <option>Network Connection</option>
+        <option>Software</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="groupTicket">Group</label>
+      <select class="form-control" id="groupTicket">
+        <option>Choose</option>
+        <option>5L Metro Manila - Rizal Team</option>
+        <option>5L MRBU Onsite</option>
+        <option>5L SLBU & NLBU</option>
+        <option>5L VRBU Onsite</option>
+      </select>
+    </div>
+  </div>
 </div>
 
+<div
+  class="w-full mb-4 border border-default-medium rounded-base bg-neutral-secondary-medium shadow-xs"
+>
+  <div class="px-4 py-2 bg-neutral-secondary-medium rounded-t-base">
+    <label for="ticketDesc" class="sr-only">Description..</label>
+    <textarea
+      id="ticketDesc"
+      rows="4"
+      class="block w-full px-0 text-sm text-heading bg-neutral-secondary-medium border-0 focus:ring-0 placeholder:text-body"
+      placeholder="Description.."
+      required
+    ></textarea>
+  </div>
+</div>
 
-<form>
+<div class="row">
+  <div class="col-md-6">
     <div class="form-group">
-        <label for="contactClient">Contact</label>
-        <span class="star" aria-hidden="true">*</span>
-        <input type="email" class="form-control" id="contactClient" placeholder="name@example.com">
+      <label for="sourceTicket">Source</label>
+      <select class="form-control" id="sourceTicket">
+        <option>Choose</option>
+        <option>Phone</option>
+        <option>Email</option>
+        <option>Chat</option>
+      </select>
     </div>
-    <div class="form-group">
-        <label for="subjectClient">Subject</label>
-        <span class="star" aria-hidden="true">*</span>
-        <input type="email" class="form-control" id="subjectClient" placeholder="Subject">
-    </div>
-    <div class="form-group">
-        <label for="statusTicket">Status</label>
-        <select class="form-control" id="statusTicket">
-            <option>Choose</option>
-            <option>New</option>
-            <option>Open</option>
-            <option>Pending</option>
-            <option>Awaiting response from client</option>
-            <option>Resolved</option>
-            <option>CLose</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="urgencyTicket">Urgency</label>
-        <select class="form-control" id="urgencyTicket">
-            <option>Choose</option>
-            <option>Low</option>
-            <option>Medium</option>
-            <option>High</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="impactTicket">Impact</label>
-        <select class="form-control" id="impactTicket">
-            <option>Choose</option>
-            <option>Low</option>
-            <option>Medium</option>
-            <option>High</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="priorityTicket">Priority</label>
-        <select class="form-control" id="priorityTicket">
-            <option>Choose</option>
-            <option>Low</option>
-            <option>Medium</option>
-            <option>High</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="urgencyTicket">Status</label>
-        <select class="form-control" id="urgencyTicket">
-            <option>Choose</option>
-            <option>Low</option>
-            <option>Medium</option>
-            <option>High</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="categoryTicket">Category</label>
-        <select class="form-control" id="categoryTicket">
-            <option>Choose</option>
-            <option>Hardware</option>
-            <option>Network Connection</option>
-            <option>Software</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="groupTicket">Group</label>
-        <select class="form-control" id="groupTicket">
-            <option>Choose</option>
-            <option>5L Metro Manila - Rizal Team</option>
-            <option>5L MRBU Onsite</option>
-            <option>5L Solutions Team</option>
-            <option>5L VRBU Onsite</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="assignfieldTicket">Assign Field Agent</label>
-        <select class="form-control" id="assignfieldTicket">
-            <option>Choose</option>
-            <option>Charles Darwin Magbanua</option>
-            <option>Lexus Charles Hocom</option>
-            <option>Kenneth Rivera</option>
-        </select>
-    </div>
-
-
-    <div class="w-full mb-4 border border-default-medium rounded-base bg-neutral-secondary-medium shadow-xs">
-        <div class="px-4 py-2 bg-neutral-secondary-medium rounded-t-base">
-            <label for="comment" class="sr-only">Description..</label>
-            <textarea id="comment" rows="4"
-                class="block w-full px-0 text-sm text-heading bg-neutral-secondary-medium border-0 focus:ring-0 placeholder:text-body"
-                placeholder="Description.." required></textarea>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="sourceTicket">Source</label>
-        <select class="form-control" id="sourceTicket">
-            <option>Choose</option>
-            <option>Phone</option>
-            <option>Email</option>
-            <option>Chat</option>
-        </select>
-    </div>
+  </div>
+  <div class="col-md-6">
     <div class="mb-3">
-        <label for="formFile" class="form-label">Default file input example</label>
-        <input class="form-control" type="file" id="formFile">
+      <label for="formFile" class="form-label"
+        >Default file input example</label
+      >
+      <input class="form-control" type="file" id="formFile" />
     </div>
-    <div class="d-sm-flex align-items-center justify-content-between mb-3">
-        <a href="/ticket" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
-                class="fa fa-plus fa-lg"></i> CREATE TICKET</a>
-    </div>
-</form>
+  </div>
+</div>
+
+<button class="btn btn-sm btn-success" id="createTicketBtn">
+  Create Ticket
+</button>
+
+<div class="card-body">
+  <div class="table-responsive">
+    <table
+      class="table table-bordered"
+      id="slbu-table"
+      width="100%"
+      cellspacing="0"
+    >
+      <thead class="thead-dark">
+        <tr>
+          <th>Ticket ID</th>
+          <th>Contact Client</th>
+          <th>Subject Client</th>
+          <th>status</th>
+          <th>Urgency Ticket</th>
+          <th>Impact Ticket</th>
+          <th>Priority Ticket</th>
+          <th>CategoryTicket</th>
+          <th>Group Ticket</th>
+          <th>Ticket Description</th>
+          <th>Source Ticket</th>
+          <th>FormFile</th>
+        </tr>
+      </thead>
+      <tbody id="tickettableBody"></tbody>
+    </table>
+  </div>
+</div>

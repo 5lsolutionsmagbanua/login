@@ -1,29 +1,156 @@
-<div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Create User</h1>
+<div class="row">
+  <div class="col-md-12">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+      <h1 class="h3 mb-0 text-gray-800">Add User</h1>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <span class="star" aria-hidden="true">*</span>
+          <input
+            type="email"
+            class="form-control"
+            id="firstName"
+            placeholder="First Name"
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <span class="star" aria-hidden="true">*</span>
+          <input
+            type="email"
+            class="form-control"
+            id="lastName"
+            placeholder="Last Name"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="middleName">Middle Name</label>
+          <span class="star" aria-hidden="true">*</span>
+          <input
+            type="email"
+            class="form-control"
+            id="middleName"
+            placeholder="Middle Name"
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="address">Address</label>
+          <span class="star" aria-hidden="true">*</span>
+          <input
+            type="email"
+            class="form-control"
+            id="address"
+            placeholder="Address"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="userName">User Name</label>
+      <span class="star" aria-hidden="true">*</span>
+      <input
+        type="email"
+        class="form-control"
+        id="userName"
+        placeholder="User Name"
+      />
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+          <label>Password:</label>
+          <span class="star" aria-hidden="true">*</span>
+          <div class="input-group">
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              placeholder="Password"
+            />
+            <i
+              class="bi bi-eye-slash"
+              id="togglePassword"
+              style="cursor: pointer"
+            ></i>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label>Confirm Password:</label>
+          <span class="star" aria-hidden="true">*</span>
+          <div class="input-group">
+            <input
+              type="confirmPassword"
+              id="confirmPassword"
+              class="form-control"
+              placeholder="Confirm Password"
+            />
+            <i
+              class="bi bi-eye-slash"
+              id="togglePassword"
+              style="cursor: pointer"
+            ></i>
+          </div>
+        </div>
+         <div class="col-md-4">
+        <div class="form-group">
+          <label for="userRole">User Role</label>
+          <select class="form-control" id="userRole">
+            <option>Choose</option>
+            <option>Super Visor</option>
+            <option>Team Lead</option>
+            <option>It Field Associate</option>
+            <option>Human Resource</option>
+            <option>Research And Development Team</option>
+          </select>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <button class="btn btn-sm btn-success" id="adduserBtn">Add User</button>
+  </div>
 </div>
 
-<form>
-    <div class="form-group">
-        <label for="contactClient">User Name</label>
-        <span class="star" aria-hidden="true">*</span>
-        <input type="email" class="form-control" id="contactClient" placeholder="User Name">
+<div class="row">
+  <div class="col">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table
+          class="table table-bordered"
+          id="slbu-table"
+          width="100%"
+          cellspacing="0"
+        >
+          <thead class="thead-dark">
+            <tr>
+              <th>Employee ID</th>
+              <th>First Name</th>
+              <th>Sub Category Ticket</th>
+              <th>Last Name</th>
+              <th>Middle Name</th>
+              <th>User Name</th>
+              <th>Password</th>
+              <th>Confirm Password</th>
+              <th>Date Created</th>
+              <th>User Role</th>
+            </tr>
+          </thead>
+          <tbody id="usertableBody"></tbody>
+        </table>
+      </div>
     </div>
-    <div class="form-group">
-        <label for="subjectClient">Password</label>
-        <span class="star" aria-hidden="true">*</span>
-        <input type="email" class="form-control" id="subjectClient" placeholder="Password">
-    </div>
-    <div class="form-group">
-        <label for="statusTicket">Status</label>
-        <select class="form-control" id="statusTicket">
-            <option>Choose</option>
-            <option>Admin</option>
-            <option>Service Engineer</option>
-        </select>
-    </div>
-    
-    <div class="d-sm-flex align-items-center justify-content-between mb-3">
-        <a href="/ticket" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
-                class="fa fa-plus fa-lg"></i> Create User</a>
-    </div>
-</form>
+  </div>
+</div>

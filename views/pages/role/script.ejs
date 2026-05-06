@@ -1,0 +1,84 @@
+<script>
+  // const togglePassword = document.querySelector("#togglePassword");
+  // const password = document.querySelector("#password");
+
+  // togglePassword.addEventListener("click", function () {
+  //   const type =
+  //     password.getAttribute("type") === "password" ? "text" : "password";
+  //   password.setAttribute("type", type);
+  //   this.classList.toggle("bi-eye");
+  // });
+
+  function loadTableData() {
+    $.ajax({
+      url: "/role/load", // The endpoint on your server
+      method: "GET",
+      // dataType: "json",
+      success: function (data) {
+        let tableRows = "";
+        console.log(data);
+        data.forEach((item) => {
+          let updatedDate = "";
+          if (item.updatedAt) {
+            updatedDate = item.updatedAt;
+          } else {
+            updatedDate = "N/A";
+          }
+          const editBtn = `<button class="btn btn-sm btn-sucess" id = "editBtn">Edit</button>`;
+          tableRows += `
+                        <tr>
+                          <td>${item.roleId}</td>
+                            <td>${item.roleName}</td>
+                            <td>${item.status}</td>
+                            <td>${item.dateNow}</td>
+                           <td>${updatedDate}</td>
+                           <td>${editBtn}</td>
+                        </tr>
+                    `;
+        });
+
+        // Replace the content of the tbody
+        $("#roletableBody").html(tableRows);
+      },
+      error: function (err) {
+        console.error("Error fetching data:", err);
+        $("#slbu-table").html(
+          '<tr><td colspan="3">Failed to load data.</td></tr>',
+        );
+      },
+    });
+  }
+
+  loadTableData();
+  $(document).ready(function () {
+    $("#addroleBtn").on("click", function (e) {
+      e.preventDefault();
+
+      const roleList = {
+        roleId: $("#roleId").val(),
+        roleName: $("#roleName").val(),
+        status: $("#status").val(),
+      };
+      $.ajax({
+        url: "/role/user-role", // Your Express route
+        type: "POST", // The method
+        contentType: "application/json",
+        data: JSON.stringify(roleList),
+        // headers: {
+        //     'X-Custom-Header': 'MyValue'
+        // },
+        success: function (response) {
+          // 'response' is the data sent from the server
+          //   $("#result").text(
+          //     "User Name: " + response.firstName + " " + response.lastName,
+          //   );
+          alert("Server: " + response.message);
+          loadTableData();
+        },
+        error: function (xhr, status, error) {
+          console.error("Something went wrong:", error);
+        },
+      });
+    });
+  });
+</script>
