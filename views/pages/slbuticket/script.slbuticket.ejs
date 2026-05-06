@@ -1,0 +1,81 @@
+<script>
+  function loadTableData() {
+    $.ajax({
+      url: "/ticket/load", // The endpoint on your server
+      method: "GET",
+      // dataType: "json",
+      success: function (data) {
+        let tableRows = "";
+        console.log(data);
+        data.forEach((item) => {
+          tableRows += `
+                        <tr>
+                            <td>${item.ticketId}</td>
+                            <td>${item.contactClient}</td>
+                            <td>${item.subjectClient}</td>
+                            <td>${item.status}</td>
+                            <td>${item.urgencyTicket}</td>
+                            <td>${item.impactTicket}</td>
+                            <td>${item.priorityTicket}</td>
+                            <td>${item.categoryTicket}</td>
+                            <td>${item.groupTicket}</td>
+                            <td>${item.ticketDesc}</td>
+                            <td>${item.sourceTicket}</td>
+                            <td>${item.formFile}</td>
+                        </tr>
+                    `;
+        });
+
+        // Replace the content of the tbody
+        $("#tickettableBody").html(tableRows);
+      },
+      error: function (err) {
+        console.error("Error fetching data:", err);
+        $("#slbu-table").html(
+          '<tr><td colspan="3">Failed to load data.</td></tr>',
+        );
+      },
+    });
+  }
+
+  $(document).ready(function () {
+    $("#createTicketBtn").on("click", function (e) {
+      e.preventDefault();
+
+      const userTicket = {
+        contactClient: $("#contactClient").val(),
+        subjectClient: $("#subjectClient").val(),
+        status: $("#status").val(),
+        urgencyTicket: $("#urgencyTicket").val(),
+        impactTicket: $("#impactTicket").val(),
+        priorityTicket: $("#priorityTicket").val(),
+        categoryTicket: $("#categoryTicket").val(),
+        groupTicket: $("#groupTicket").val(),
+        ticketDesc: $("#ticketDesc").val(),
+        sourceTicket: $("#sourceTicket").val(),
+        formFile: $("#formFile").val(),
+      };
+      $.ajax({
+        url: "/ticket/create-ticket", // Your Express route
+        type: "POST", // The method
+        contentType: "application/json",
+        data: JSON.stringify(userTicket),
+        // headers: {
+        //     'X-Custom-Header': 'MyValue'
+        // },
+        success: function (response) {
+          // 'response' is the data sent from the server
+          //   $("#result").text(
+          //     "User Name: " + response.firstName + " " + response.lastName,
+          //   );
+          loadTableData();
+          alert("Server: " + response.message);
+        },
+        error: function (xhr, status, error) {
+          console.error("Something went wrong:", error);
+        },
+      });
+    });
+    loadTableData();
+  });
+</script>

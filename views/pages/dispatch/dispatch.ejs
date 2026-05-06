@@ -1,0 +1,143 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800">Assign Ticket</h1>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="form-group">
+      <label for="serviceEngineer">Service Engineer</label>
+      <select class="form-control" id="serviceEngineer">
+        <option>Choose</option>
+        <option>Charles Darwin Magbanua</option>
+        <option>Lexus Charles Hocom</option>
+        <option>Kenneth Rivera</option>
+        <option>Jovyn Azura</option>
+        <option>Jude Maglinao</option>
+        <option>Jomar Rebulado</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <label for="subjectClient">Subject Client</label>
+      <span class="star" aria-hidden="true">*</span>
+      <input
+        type="email"
+        class="form-control"a
+        id="subjectClient"
+        placeholder="Subject"
+      />
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <label for="status">Status</label>
+      <select class="form-control" id="status">
+        <option>Choose</option>
+        <option>New</option>
+        <option>Pending</option>
+        <option>Resolved</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="form-group">
+      <label for="priorityTicket">Priority</label>
+      <select class="form-control" id="priorityTicket">
+        <option>Choose</option>
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <label for="categoryTicket">Category</label>
+      <select class="form-control" id="categoryTicket">
+        <option>Choose</option>
+        <option>Hardware</option>
+        <option>Network Connection</option>
+        <option>Software</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <label for="groupTicket">Group</label>
+      <select class="form-control" id="groupTicket">
+        <option>Choose</option>
+        <option>5L Metro Manila - Rizal Team</option>
+        <option>5L MRBU Onsite</option>
+        <option>5L SLBU & NLBU</option>
+        <option>5L VRBU Onsite</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="mb-3">
+      <label for="formFile" class="form-label"
+        >Default file input example</label
+      >
+      <input class="form-control" type="file" id="formFile" />
+    </div>
+  </div>
+   <div class="col-md-4">
+    <div class="form-group">
+      <label for="coordinates">Coordinates</label>
+      <span class="star" aria-hidden="true">*</span>
+      <input
+        type="email"
+        class="form-control"a
+        id="coordinates"
+        placeholder="coordinates"
+      />
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="ticketDesc" class="sr-only">Ticket Description..</label>
+    <div class="px-4 py-2 bg-neutral-secondary-medium rounded-t-base">
+      <textarea
+        id="ticketDesc"
+        rows="4"
+        class="block w-full px-0 text-sm text-heading bg-neutral-secondary-medium border-0 focus:ring-0 placeholder:text-body"
+        placeholder="Ticket Description.."
+        required
+      ></textarea>
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-sm btn-success" id="assignTicketBtn">Assign Now</button>
+
+<div class="card-body">
+  <div class="table-responsive">
+    <table
+      class="table table-bordered"
+      id="slbu-table"
+      width="100%"
+      cellspacing="0"
+    >
+      <thead class="thead-dark">
+        <tr>
+          <th>Ticket ID</th>
+          <th>Service Engineer</th>
+          <th>Subject Client</th>
+          <th>Status</th>
+          <th>Priority Ticket</th>
+          <th>CategoryTicket</th>
+          <th>Group Ticket</th>
+          <th>FormFile</th>
+          <th>Ticket Description</th>
+          <th>Coordinates</th>
+          <th>Create At</th>
+        </tr>
+      </thead>
+      <tbody id="assigntickettableBody"></tbody>
+    </table>
+  </div>
+</div>

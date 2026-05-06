@@ -1,0 +1,44 @@
+<script>
+  $(document).ready(function () {
+    $("#adduserBtn").on("click", function () {});
+    loadTableData();
+    function loadTableData() {
+      $.ajax({
+        url: "/create/load", // The endpoint on your server
+        method: "GET",
+        // dataType: "json",
+        success: function (data) {
+          let tableRows = "";
+          console.log(data);
+          data.forEach((item) => {
+            tableRows += `
+                        <tr>
+                            <td>${item.employeeID}</td>
+                            <td>${item.firstName}</td>
+                            <td>${item.lastName}</td>
+                            <td>${item.middleName}</td>
+                            <td>${item.address}</td>
+                            <td>${item.userName}</td>
+                            <td>${item.password}</td>
+                            <td>${item.confirmPassword}</td>
+                            <td>${item.userRole}</td>
+                            <td>${item.dateNow}</td>
+                        </tr>
+                    `;
+          });
+
+          // Replace the content of the tbody
+          $("#usertableBody").html(tableRows);
+        },
+        error: function (err) {
+          console.error("Error fetching data:", err);
+          $("#slbu-table").html(
+            '<tr><td colspan="3">Failed to load data.</td></tr>',
+          );
+        },
+      });
+    }
+
+    // Call the function when the button is clicked
+  });
+</script>

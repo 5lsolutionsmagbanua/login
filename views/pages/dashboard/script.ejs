@@ -1,0 +1,20 @@
+
+<script>
+  function loadTableData() {
+    $.ajax({
+      url: "/ticket/metrics", // The endpoint on your server
+      method: "GET",
+      // dataType: "json",
+      success: function (data) {
+        console.log(data);
+        // Replace the content of the tbody
+      },
+      error: function (err) {
+        console.error("Error fetching data:", err);
+        $("#slbu-table").html(
+          '<tr><td colspan="3">Failed to load data.</td></tr>',
+        );
+      },
+    });
+  }
+</script>

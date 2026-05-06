@@ -1,0 +1,46 @@
+
+<script>
+   $(document).ready(function () {
+    $("#assignTicketBtn").on("click", function () {});
+    loadTableData();
+    function loadTableData() {
+      $.ajax({
+        url: "/dispatch/load", // The endpoint on your server
+        method: "GET",
+        // dataType: "json",
+        success: function (data) {
+          let tableRows = "";
+          console.log(data);
+          data.forEach((item) => {
+            tableRows += `
+                        <tr>
+                            <td>${item.ticketId}</td>
+                            <td>${item.serviceEngineer}</td>
+                            <td>${item.subjectClient}</td>
+                            <td>${item.status}</td>
+                            <td>${item.priorityTicket}</td>
+                            <td>${item.categoryTicket}</td>
+                            <td>${item.groupTicket}</td>
+                            <td>${item.formFile}</td>
+                            <td>${item.ticketDesc}</td>
+                            <td>${item.coordinates}</td>
+                            <td>${item.dateNow}</td>
+                        </tr>
+                    `;
+          });
+
+          // Replace the content of the tbody
+          $("#assigntickettableBody").html(tableRows);
+        },
+        error: function (err) {
+          console.error("Error fetching data:", err);
+          $("#slbu-table").html(
+            '<tr><td colspan="3">Failed to load data.</td></tr>',
+          );
+        },
+      });
+    }
+
+    // Call the function when the button is clicked
+  });
+</script>

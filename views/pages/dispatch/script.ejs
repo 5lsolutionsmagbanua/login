@@ -1,0 +1,80 @@
+<script>
+ //-- Dispatch Script --// 
+  function loadTableData() {
+    $.ajax({
+      url: "/dispatch/load", // The endpoint on your server
+      method: "GET",
+      // dataType: "json",
+      success: function (data) {
+        let tableRows = "";
+        console.log(data);
+        data.forEach((item) => {
+          tableRows += `
+                        <tr>
+                            <td>${item.ticketId}</td>
+                            <td>${item.serviceEngineer}</td>
+                            <td>${item.subjectClient}</td>
+                            <td>${item.status}</td>
+                            <td>${item.priorityTicket}</td>
+                            <td>${item.categoryTicket}</td>
+                            <td>${item.groupTicket}</td>
+                            <td>${item.formFile}</td>
+                            <td>${item.ticketDesc}</td>
+                            <td>${item.coordinates}</td>
+                            <td>${item.dateNow}</td>
+                        </tr>
+                    `;
+        });
+
+        // Replace the content of the tbody
+        $("#assigntickettableBody").html(tableRows);
+      },
+      error: function (err) {
+        console.error("Error fetching data:", err);
+        $("#slbu-table").html(
+          '<tr><td colspan="3">Failed to load data.</td></tr>',
+        );
+      },
+    });
+  }
+
+  $(document).ready(function () {
+    $("#assignTicketBtn").on("click", function (e) {
+      e.preventDefault();
+
+      const userTicket = {
+        serviceEngineer: $("#serviceEngineer").val(),
+        subjectClient: $("#subjectClient").val(),
+        status: $("#status").val(),
+        priorityTicket: $("#priorityTicket").val(),
+        categoryTicket: $("#categoryTicket").val(),
+        groupTicket: $("#groupTicket").val(),
+        ticketDesc: $("#ticketDesc").val(),
+        coordinates: $("#coordinates").val(),
+        formFile: $("#formFile").val(),
+      };
+      $.ajax({
+        url: "/dispatch/dispatch-ticket", // Your Express route
+        type: "POST", // The method
+        contentType: "application/json",
+        data: JSON.stringify(userTicket),
+        // headers: {
+        //     'X-Custom-Header': 'MyValue'
+        // },
+        success: function (response) {
+          // 'response' is the data sent from the server
+          //   $("#result").text(
+          //     "User Name: " + response.firstName + " " + response.lastName,
+          //   );
+          loadTableData();
+          alert("Server: " + response.message);
+        },
+        error: function (xhr, status, error) {
+          console.error("Something went wrong:", error);
+        },
+      });
+    });
+    loadTableData();
+  });
+  //-- Dispatch Script --// 
+</script>

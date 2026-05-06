@@ -1,0 +1,90 @@
+<script>
+  // const togglePassword = document.querySelector("#togglePassword");
+  // const password = document.querySelector("#password");
+
+  // togglePassword.addEventListener("click", function () {
+  //   const type =
+  //     password.getAttribute("type") === "password" ? "text" : "password";
+  //   password.setAttribute("type", type);
+  //   this.classList.toggle("bi-eye");
+  // });
+
+  function loadTableData() {
+    $.ajax({
+      url: "/branch/load", // The endpoint on your server
+      method: "GET",
+      // dataType: "json",
+      success: function (data) {
+        let tableRows = "";
+        console.log(data);
+        data.forEach((item) => {
+          let updatedDate = "";
+          if (item.updatedAt) {
+            updatedDate = item.updatedAt;
+          } else {
+            updatedDate = "N/A";
+          }
+          const editBtn = `<button class="btn btn-sm btn-sucess" id = "editBtn">Edit</button>`;
+          tableRows += `
+                        <tr>
+                            <td>${item.branchName}</td>
+                            <td>${item.companyName}</td>
+                            <td>${item.address}</td>
+                            <td>${item.contactNumber}</td>
+                            <td>${item.email}</td>
+                            <td>${item.status}</td>
+                            <td>${item.dateNow}</td>
+                           <td>${updatedDate}</td>
+                           <td>${editBtn}</td>
+                        </tr>
+                    `;
+        });
+
+        // Replace the content of the tbody
+        $("#branchtableBody").html(tableRows);
+      },
+      error: function (err) {
+        console.error("Error fetching data:", err);
+        $("#slbu-table").html(
+          '<tr><td colspan="3">Failed to load data.</td></tr>',
+        );
+      },
+    });
+  }
+
+  loadTableData();
+  $(document).ready(function () {
+    $("#addbranchBtn").on("click", function (e) {
+      e.preventDefault();
+
+      const branchList = {
+        branchName: $("#branchName").val(),
+        companyName: $("#companyName").val(),
+        address: $("#address").val(),
+        contactNumber: $("#contactNumber").val(),
+        email: $("#email").val(),
+        status: $("#status").val(),
+      };
+      $.ajax({
+        url: "/branch/add-branch", // Your Express route
+        type: "POST", // The method
+        contentType: "application/json",
+        data: JSON.stringify(branchList),
+        // headers: {
+        //     'X-Custom-Header': 'MyValue'
+        // },
+        success: function (response) {
+          // 'response' is the data sent from the server
+          //   $("#result").text(
+          //     "User Name: " + response.firstName + " " + response.lastName,
+          //   );
+          alert("Server: " + response.message);
+          loadTableData();
+        },
+        error: function (xhr, status, error) {
+          console.error("Something went wrong:", error);
+        },
+      });
+    });
+  });
+</script>
