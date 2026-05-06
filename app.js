@@ -15,6 +15,8 @@ var userlistRouter = require("./routes/userlist");
 var branchRouter = require("./routes/branch");
 var roleRouter = require("./routes/role");
 var dispatchRouter = require("./routes/dispatch");
+var assignfieldRouter = require("./routes/assignfield");
+
 var app = express();
 // view engine setup
 app.set("views", path.join(__dirname, "views/layout"));
@@ -37,6 +39,9 @@ app.use("/userlist", userlistRouter);
 app.use("/branch", branchRouter);
 app.use("/role", roleRouter);
 app.use("/dispatch", dispatchRouter);
+app.use("/assignfield", assignfieldRouter);
+
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));

@@ -1,13 +1,13 @@
 var express = require("express");
 var router = express.Router();
 const { v4: uuidv4 } = require("uuid");
+
 /* GET home page. */
-let data = [];
 router.get("/", function (req, res, next) {
-  res.render("dispatch", { title: "Dispatch Page" });
+  res.render("assignfield", { title: "Assigned Field Page" });
 });
 
-router.post("/dispatch-ticket", function (req, res, next) {
+router.post("/dispatch-list", function (req, res, next) {
   const {
     serviceEngineer,
     subjectClient,
@@ -61,16 +61,6 @@ router.post("/dispatch-ticket", function (req, res, next) {
     });
     console.log(data);
     res.status(200).json({ message: "Dispatch Created Succesfully" });
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ message: `Server Error ${error.message}` });
-  }
-});
-
-router.get("/load", function (req, res, next) {
-  try {
-    console.log(data);
-    res.status(200).json(data);
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: `Server Error ${error.message}` });

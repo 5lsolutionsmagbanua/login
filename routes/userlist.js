@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 
-const {v4: uuidv4} = require("uuid")
+const { v4: uuidv4 } = require("uuid");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
@@ -18,12 +18,39 @@ router.get("/", function (req, res, next) {
 // });
 
 router.post("/user-list", function (req, res, next) {
-  const { lastName, middleName, address, userName, password, confirmPassword } = req.body;
+  const {
+    lastName,
+    middleName,
+    address,
+    userName,
+    password,
+    confirmPassword,
+    userRole,
+  } = req.body;
   try {
-    if ( !password || !lastName || !middleName || !address || !userName || !password || !confirmPassword) {
+    if (
+      !password ||
+      !lastName ||
+      !middleName ||
+      !address ||
+      !userName ||
+      !password ||
+      !confirmPassword ||
+      !userRole
+    ) {
       res.status(400).json({ message: "Required Fields Empty" });
     }
-    console.log(uuidv4(), password, lastName, middleName, address, userName, password, confirmPassword )
+    console.log(
+      uuidv4(),
+      password,
+      lastName,
+      middleName,
+      address,
+      userName,
+      password,
+      confirmPassword,
+      userRole,
+    );
     res.status(200).json({ message: "User Created Succesfully" });
   } catch (error) {
     console.log(error);
